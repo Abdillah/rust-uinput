@@ -48,9 +48,22 @@ impl Code for Controller {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(MiscVariants))]
-	pub enum Misc {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Misc {
+	_0,
+	_1,
+	_2,
+	_3,
+	_4,
+	_5,
+	_6,
+	_7,
+	_8,
+	_9,
+}
+
+IterVariants! {
+	(MiscVariants) pub enum Misc {
 		_0,
 		_1,
 		_2,
@@ -93,9 +106,20 @@ impl Code for Misc {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(MouseVariants))]
-	pub enum Mouse {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Mouse {
+	Left,
+	Right,
+	Middle,
+	Side,
+	Extra,
+	Forward,
+	Back,
+	Task,
+}
+
+IterVariants! {
+	(MouseVariants) pub enum Mouse {
 		Left,
 		Right,
 		Middle,
@@ -128,9 +152,25 @@ impl Code for Mouse {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(JoyStickVariants))]
-	pub enum JoyStick {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum JoyStick {
+	Trigger,
+	Thumb,
+	Thumb2,
+	Top,
+	Top2,
+	Pinkie,
+	Base,
+	Base2,
+	Base3,
+	Base4,
+	Base5,
+	Base6,
+	Dead,
+}
+
+IterVariants! {
+	(JoyStickVariants) pub enum JoyStick {
 		Trigger,
 		Thumb,
 		Thumb2,
@@ -182,9 +222,31 @@ impl Code for JoyStick {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(GamePadVariants))]
-	pub enum GamePad {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum GamePad {
+	South,
+	A,
+	East,
+	B,
+	C,
+	North,
+	X,
+	West,
+	Y,
+	Z,
+	TL,
+	TR,
+	TL2,
+	TR2,
+	Select,
+	Start,
+	Mode,
+	ThumbL,
+	ThumbR,
+}
+
+IterVariants! {
+	(GamePadVariants) pub enum GamePad {
 		South,
 		A,
 		East,
@@ -248,9 +310,27 @@ impl Code for GamePad {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(DigiVariants))]
-	pub enum Digi {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Digi {
+	Pen,
+	Rubber,
+	Brush,
+	Pencil,
+	AirBrush,
+	Finger,
+	Mouse,
+	Lens,
+	QuintTap,
+	Touch,
+	Stylus,
+	Stylus2,
+	DoubleTap,
+	TripleTap,
+	QuadTap,
+}
+
+IterVariants! {
+	(DigiVariants) pub enum Digi {
 		Pen,
 		Rubber,
 		Brush,
@@ -306,9 +386,14 @@ impl Code for Digi {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(WheelVariants))]
-	pub enum Wheel {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Wheel {
+	GearDown,
+	GearUp,
+}
+
+IterVariants! {
+	(WheelVariants) pub enum Wheel {
 		GearDown,
 		GearUp,
 	}
@@ -338,9 +423,16 @@ impl Code for Wheel {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(DPadVariants))]
-	pub enum DPad {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum DPad {
+	Up,
+	Down,
+	Left,
+	Right,
+}
+
+IterVariants! {
+	(DPadVariants) pub enum DPad {
 		Up,
 		Down,
 		Left,
@@ -374,9 +466,52 @@ impl Code for DPad {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(TriggerHappyVariants))]
-	pub enum TriggerHappy {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum TriggerHappy {
+	_1,
+	_2,
+	_3,
+	_4,
+	_5,
+	_6,
+	_7,
+	_8,
+	_9,
+	_10,
+	_11,
+	_12,
+	_13,
+	_14,
+	_15,
+	_16,
+	_17,
+	_18,
+	_19,
+	_20,
+	_21,
+	_22,
+	_23,
+	_24,
+	_25,
+	_26,
+	_27,
+	_28,
+	_29,
+	_30,
+	_31,
+	_32,
+	_33,
+	_34,
+	_35,
+	_36,
+	_37,
+	_38,
+	_39,
+	_40,
+}
+
+IterVariants! {
+	(TriggerHappyVariants) pub enum TriggerHappy {
 		_1,
 		_2,
 		_3,

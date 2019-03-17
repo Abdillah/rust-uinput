@@ -52,9 +52,114 @@ impl Code for Keyboard {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(KeyVariants))]
-	pub enum Key {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Key {
+	Reserved,
+	Esc,
+	_1,
+	_2,
+	_3,
+	_4,
+	_5,
+	_6,
+	_7,
+	_8,
+	_9,
+	_0,
+	Minus,
+	Equal,
+	BackSpace,
+	Tab,
+	Q,
+	W,
+	E,
+	R,
+	T,
+	Y,
+	U,
+	I,
+	O,
+	P,
+	LeftBrace,
+	RightBrace,
+	Enter,
+	LeftControl,
+	A,
+	S,
+	D,
+	F,
+	G,
+	H,
+	J,
+	K,
+	L,
+	SemiColon,
+	Apostrophe,
+	Grave,
+	LeftShift,
+	BackSlash,
+	Z,
+	X,
+	C,
+	V,
+	B,
+	N,
+	M,
+	Comma,
+	Dot,
+	Slash,
+	RightShift,
+	LeftAlt,
+	Space,
+	CapsLock,
+	F1,
+	F2,
+	F3,
+	F4,
+	F5,
+	F6,
+	F7,
+	F8,
+	F9,
+	F10,
+	NumLock,
+	ScrollLock,
+	F11,
+	F12,
+	RightControl,
+	SysRq,
+	RightAlt,
+	LineFeed,
+	Home,
+	Up,
+	PageUp,
+	Left,
+	Right,
+	End,
+	Down,
+	PageDown,
+	Insert,
+	Delete,
+	LeftMeta,
+	RightMeta,
+	ScrollUp,
+	ScrollDown,
+	F13,
+	F14,
+	F15,
+	F16,
+	F17,
+	F18,
+	F19,
+	F20,
+	F21,
+	F22,
+	F23,
+	F24,
+}
+
+IterVariants! {
+	(KeyVariants) pub enum Key {
 		Reserved,
 		Esc,
 		_1,
@@ -284,9 +389,34 @@ impl Code for Key {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(KeyPadVariants))]
-	pub enum KeyPad {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum KeyPad {
+	Asterisk,
+	_7,
+	_8,
+	_9,
+	Minus,
+	_4,
+	_5,
+	_6,
+	Plus,
+	_1,
+	_2,
+	_3,
+	_0,
+	Dot,
+	AltComma,
+	Enter,
+	Slash,
+	Equal,
+	PlusMinus,
+	Comma,
+	LeftParen,
+	RightParen,
+}
+
+IterVariants! {
+	(KeyPadVariants) pub enum KeyPad {
 		Asterisk,
 		_7,
 		_8,
@@ -356,9 +486,244 @@ impl Code for KeyPad {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(MiscVariants))]
-	pub enum Misc {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Misc {
+	ZenkakuHankaku,
+	ND102,
+	RO,
+	Katakana,
+	Hiragana,
+	Henkan,
+	KatakanaHiragana,
+	Muhenkan,
+	Macro,
+	Mute,
+	VolumeDown,
+	VolumeUp,
+	Power,
+	Pause,
+	Scale,
+	Hangeul,
+	Hanguel,
+	Hanja,
+	Yen,
+	Compose,
+	Stop,
+	Again,
+	Props,
+	Undo,
+	Front,
+	Copy,
+	Open,
+	Paste,
+	Find,
+	Cut,
+	Help,
+	Menu,
+	Calc,
+	Setup,
+	Sleep,
+	WakeUp,
+	File,
+	SendFile,
+	DeleteFile,
+	XFer,
+	Prog1,
+	Prog2,
+	WWW,
+	MSDOS,
+	Coffee,
+	ScreenLock,
+	RotateDisplay,
+	Direction,
+	CycleWindows,
+	Mail,
+	Bookmarks,
+	Computer,
+	Back,
+	Forward,
+	CloseCD,
+	EjectCD,
+	EjectCloseCD,
+	NextSong,
+	PlayPause,
+	PreviousSong,
+	StopCD,
+	Record,
+	Rewind,
+	Phone,
+	Iso,
+	Config,
+	HomePage,
+	Refresh,
+	Exit,
+	Move,
+	Edit,
+	New,
+	Redo,
+	PlayCD,
+	PauseCD,
+	Prog3,
+	Prog4,
+	DashBoard,
+	Suspend,
+	Close,
+	Play,
+	FastForward,
+	BassBoost,
+	Print,
+	HP,
+	Camera,
+	Sound,
+	Question,
+	Email,
+	Chat,
+	Search,
+	Connect,
+	Finance,
+	Sport,
+	Shop,
+	AltErase,
+	Cancel,
+	BrightnessDown,
+	BrightnessUp,
+	Media,
+	SwitchVideoMode,
+	IllumToggle,
+	IllumDown,
+	IllumUp,
+	Send,
+	Reply,
+	ForwardEmail,
+	Save,
+	Documents,
+	Battery,
+	Bluetooth,
+	WLAN,
+	UWB,
+	Unknown,
+	VideoNext,
+	VideoPrev,
+	BrightnessCycle,
+	BrightnessAuto,
+	BrightnessZero,
+	DisplayOff,
+	WWAN,
+	WIMAX,
+	RFKILL,
+	MicMute,
+	Ok,
+	Select,
+	Goto,
+	Clear,
+	Power2,
+	Option,
+	Info,
+	Time,
+	Vendor,
+	Archive,
+	Program,
+	Channel,
+	Favorites,
+	EPG,
+	PVR,
+	MHP,
+	Language,
+	Title,
+	Subtitle,
+	Angle,
+	Zoom,
+	Mode,
+	Keyboard,
+	Screen,
+	PC,
+	TV,
+	TV2,
+	VCR,
+	VCR2,
+	SAT,
+	SAT2,
+	CD,
+	Tape,
+	Radio,
+	Tuner,
+	Player,
+	Text,
+	DVD,
+	AUX,
+	MP3,
+	Audio,
+	Video,
+	Directory,
+	List,
+	Memo,
+	Calendar,
+	Red,
+	Green,
+	Yellow,
+	Blue,
+	ChannelUp,
+	ChannelDown,
+	First,
+	Last,
+	AB,
+	Next,
+	Restart,
+	Slow,
+	Shuffle,
+	Break,
+	Previous,
+	Digits,
+	TEEN,
+	TWEN,
+	VideoPhone,
+	Games,
+	ZoomIn,
+	ZoomOut,
+	ZoomReset,
+	WordProcessor,
+	Editor,
+	SpreadSheet,
+	GraphicsEditor,
+	Presentation,
+	Database,
+	News,
+	VoiceMail,
+	AddressBook,
+	Messenger,
+	DisplayToggle,
+	BrightnessToggle,
+	SpellCheck,
+	LogOff,
+	Dollar,
+	Euro,
+	FrameBack,
+	FrameForward,
+	ContextMenu,
+	MediaRepeat,
+	Up10Channels,
+	Down10Channels,
+	Images,
+	DeleteEOL,
+	DeleteEOS,
+	InsertLine,
+	DeleteLine,
+	WPS,
+	LightsToggle,
+	ALSToggle,
+	ButtonConfig,
+	TaskManager,
+	Journal,
+	ControlPanel,
+	AppSelect,
+	ScreenSaver,
+	VoiceCommand,
+	BrighnessMin,
+	BrightnessMax,
+}
+
+IterVariants! {
+	(MiscVariants) pub enum Misc {
 		ZenkakuHankaku,
 		ND102,
 		RO,
@@ -848,9 +1213,33 @@ impl Code for Misc {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(FunctionVariants))]
-	pub enum Function {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Function {
+	Press,
+	Esc,
+	F1,
+	F2,
+	F3,
+	F4,
+	F5,
+	F6,
+	F7,
+	F8,
+	F9,
+	F10,
+	F11,
+	F12,
+	_1,
+	_2,
+	D,
+	E,
+	F,
+	S,
+	B,
+}
+
+IterVariants! {
+	(FunctionVariants) pub enum Function {
 		Press,
 		Esc,
 		F1,
@@ -918,9 +1307,22 @@ impl Code for Function {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(BrailleVariants))]
-	pub enum Braille {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Braille {
+	Dot1,
+	Dot2,
+	Dot3,
+	Dot4,
+	Dot5,
+	Dot6,
+	Dot7,
+	Dot8,
+	Dot9,
+	Dot10,
+}
+
+IterVariants! {
+	(BrailleVariants) pub enum Braille {
 		Dot1,
 		Dot2,
 		Dot3,
@@ -966,9 +1368,28 @@ impl Code for Braille {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(NumericVariants))]
-	pub enum Numeric {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Numeric {
+	_0,
+	_1,
+	_2,
+	_3,
+	_4,
+	_5,
+	_6,
+	_7,
+	_8,
+	_9,
+	Star,
+	Pound,
+	A,
+	B,
+	C,
+	D,
+}
+
+IterVariants! {
+	(NumericVariants) pub enum Numeric {
 		_0,
 		_1,
 		_2,
@@ -1026,9 +1447,15 @@ impl Code for Numeric {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(TouchPadVariants))]
-	pub enum TouchPad {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum TouchPad {
+	Toggle,
+	On,
+	Off,
+}
+
+IterVariants! {
+	(TouchPadVariants) pub enum TouchPad {
 		Toggle,
 		On,
 		Off,
@@ -1060,9 +1487,19 @@ impl Code for TouchPad {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(CameraVariants))]
-	pub enum Camera {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Camera {
+	ZoomIn,
+	ZoomOut,
+	Up,
+	Down,
+	Left,
+	Right,
+	Focus,
+}
+
+IterVariants! {
+	(CameraVariants) pub enum Camera {
 		ZoomIn,
 		ZoomOut,
 		Up,
@@ -1102,9 +1539,15 @@ impl Code for Camera {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(AttendantVariants))]
-	pub enum Attendant {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Attendant {
+	On,
+	Off,
+	Toggle,
+}
+
+IterVariants! {
+	(AttendantVariants) pub enum Attendant {
 		On,
 		Off,
 		Toggle,
@@ -1136,9 +1579,18 @@ impl Code for Attendant {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(InputAssistVariants))]
-	pub enum InputAssist {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum InputAssist {
+	Prev,
+	Next,
+	PrevGroup,
+	NextGroup,
+	Accept,
+	Cancel,
+}
+
+IterVariants! {
+	(InputAssistVariants) pub enum InputAssist {
 		Prev,
 		Next,
 		PrevGroup,

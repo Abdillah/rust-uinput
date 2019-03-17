@@ -32,9 +32,18 @@ impl Code for Relative {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(PositionVariants))]
-	pub enum Position {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Position {
+	X,
+	Y,
+	Z,
+	RX,
+	RY,
+	RZ,
+}
+
+IterVariants! {
+	(PositionVariants) pub enum Position {
 		X,
 		Y,
 		Z,
@@ -71,9 +80,15 @@ impl Code for Position {
 	}
 }
 
-custom_derive! {
-	#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, IterVariants(WheelVariants))]
-	pub enum Wheel {
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
+pub enum Wheel {
+	Horizontal,
+	Dial,
+	Vertical,
+}
+
+IterVariants! {
+	(WheelVariants) pub enum Wheel {
 		Horizontal,
 		Dial,
 		Vertical,
